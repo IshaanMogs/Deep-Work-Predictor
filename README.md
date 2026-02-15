@@ -44,7 +44,5 @@ Bash
 git clone https://github.com/IshaanMogs/Deep-Work-Potential-Predictor.git
 Review the Specs: Check requirements.md and design.md to understand the system logic.
 
-Run the Predictor: (Add your specific run command here, e.g., python main.py).
-
 Authors
 Ishaan Kumar - Lead Developer & Architect

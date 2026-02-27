@@ -8,7 +8,7 @@ The Deep-Work Potential Predictor is an AI-powered productivity ecosystem design
 
 🗺️ User Journey & UI/UX Progress
 "The user starts by inputting biometric data (sleep, nutrition) on a clean dashboard. Our AWS Lambda backend processes this to display a real-time 'Focus Score' powered by SageMaker. Based on this, Amazon Bedrock generates a personalized task roadmap, and users earn 'Deep-Work Points' (DWP) to level up their rank from Novice to Legend."
-See the full wireframes in the /design folder.this should be at the start?
+See the full wireframes in the /Design folder.
 
 Key Features
 Predictive Scheduling: Uses Multiple Linear Regression to calculate your "Flow State" probability.

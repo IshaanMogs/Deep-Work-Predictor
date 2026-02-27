@@ -6,6 +6,10 @@ Built for: AI for Bharat Hackathon 2026
 📖 Overview
 The Deep-Work Potential Predictor is an AI-powered productivity ecosystem designed to help students and developers master their focus. By predicting your Focus Score (0-100) using biometric and environmental data, the app intelligently schedules your hardest tasks (like debugging or math) during your peak cognitive windows.
 
+🗺️ User Journey & UI/UX Progress
+"The user starts by inputting biometric data (sleep, nutrition) on a clean dashboard. Our AWS Lambda backend processes this to display a real-time 'Focus Score' powered by SageMaker. Based on this, Amazon Bedrock generates a personalized task roadmap, and users earn 'Deep-Work Points' (DWP) to level up their rank from Novice to Legend."
+See the full wireframes in the /design folder.this should be at the start?
+
 Key Features
 Predictive Scheduling: Uses Multiple Linear Regression to calculate your "Flow State" probability.
 

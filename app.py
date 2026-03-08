@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-import boto3
 import pandas as pd
 import re
 
@@ -9,9 +8,6 @@ import re
 # -----------------------------
 
 API_URL = "https://0xyqw1cb77.execute-api.us-east-1.amazonaws.com/default/Deepwork-Orchestrator"
-
-dynamodb = boto3.resource("dynamodb", region_name="us-east-1")
-table = dynamodb.Table("UserProductivityTable")
 
 
 # -----------------------------
@@ -80,6 +76,7 @@ with col2:
             roadmap = roadmap.replace("Here is the output:", "")
             roadmap = roadmap.replace("```", "")
             roadmap = roadmap.replace("python", "")
+            roadmap = roadmap.replace("Here's a possible execution plan:", "")
 
             if "Deep Work Execution Plan" in roadmap:
                 roadmap = roadmap.split("Deep Work Execution Plan")[0]
@@ -142,33 +139,3 @@ with col2:
 
         except Exception as e:
             st.error(f"API Error: {e}")
-
-
-# -----------------------------
-# SESSION HISTORY
-# -----------------------------
-
-st.divider()
-st.subheader("Session History")
-
-try:
-
-    response = table.scan()
-    items = response.get("Items", [])
-
-    if items:
-
-        df = pd.DataFrame(items)
-
-        df = df.sort_values("timestamp", ascending=False)
-
-        df = df[["goal", "focus_score", "decision"]]
-
-        st.dataframe(df, use_container_width=True)
-
-    else:
-        st.write("No sessions recorded yet.")
-
-except Exception as e:
-
-    st.error(f"Error loading history: {e}")
